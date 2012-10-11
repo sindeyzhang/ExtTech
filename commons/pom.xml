@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.exttech</groupId>
+    <artifactId>commons</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>commons</name>
+    <url>http://www.exttech.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <commons-net.version>3.1</commons-net.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.exttech.deps</groupId>
+            <artifactId>spring-deps</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.exttech.deps</groupId>
+            <artifactId>hibernate-deps</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.exttech.deps</groupId>
+            <artifactId>test-deps</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>${commons-net.version}</version>
+        </dependency>
+    </dependencies>
+</project>

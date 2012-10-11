@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.exttech</groupId>
+    <artifactId>cms</artifactId>
+    <packaging>war</packaging>
+    <version>1.0</version>
+    <name>ExtTech Content Manage System</name>
+    <url>http://www.exttech.com</url>
+
+    <properties>
+        <sl4j.version>1.5.6</sl4j.version>
+    </properties>
+
+
+    <build>
+        <finalName>cms</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <!-- Configuration which allows JUnit tests to be placed in the same folder as java files -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testSourceDirectory>${basedir}/src/main/java/</testSourceDirectory>
+                    <testClassesDirectory>${project.build.directory}/classes/</testClassesDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+        <!-- Configuration which allows configuration files (such as xml files) to be placed in the same folder as java files -->
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/java/</directory>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.exttech</groupId>
+            <artifactId>hibernate-deps</artifactId>
+            <version>1.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.exttech</groupId>
+            <artifactId>spring-deps</artifactId>
+            <version>1.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.exttech</groupId>
+            <artifactId>test-deps</artifactId>
+            <version>1.0</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- **********************************************************************
+       ** OTHER DEPENDENCIES **
+       ********************************************************************** -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jcl</artifactId>
+            <version>${sl4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${sl4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.8.0.10</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.2.126</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2.2</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>
